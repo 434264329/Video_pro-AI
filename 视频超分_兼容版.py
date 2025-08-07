@@ -1,12 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-视频超分辨率处理工具 - 兼容版
-支持多种视频格式，包括AV1、MPEG、DAT等
-具备空间节省模式、GPU加速、可视化界面等功能
-增强模型兼容性，自动检测模型架构参数
-"""
-
 import os
 import sys
 import tkinter as tk
@@ -54,16 +47,15 @@ class SmartModelLoader:
     def __init__(self):
         # 定义常见的参数组合
         self.param_combinations = [
-            # 您提到的参数组合
-            {'num_blocks': 8, 'num_features': 70},
+            {'num_blocks': 4, 'num_features': 64},
             
             # 常见的参数组合
             {'num_blocks': 6, 'num_features': 64},
-            {'num_blocks': 8, 'num_features': 64},
+            {'num_blocks': 8, 'num_features':70},
             {'num_blocks': 6, 'num_features': 32},
             {'num_blocks': 4, 'num_features': 64},
-            {'num_blocks': 12, 'num_features': 64},
-            {'num_blocks': 16, 'num_features': 64},
+            {'num_blocks': 7, 'num_features': 128},
+            {'num_blocks': 10, 'num_features': 128},
             
             # 轻量化版本
             {'num_blocks': 4, 'num_features': 32},
@@ -71,10 +63,10 @@ class SmartModelLoader:
             {'num_blocks': 8, 'num_features': 48},
             
             # 高性能版本
-            {'num_blocks': 8, 'num_features': 96},
-            {'num_blocks': 12, 'num_features': 96},
-            {'num_blocks': 16, 'num_features': 96},
-            {'num_blocks': 20, 'num_features': 64},
+            {'num_blocks': 10, 'num_features': 100},
+            {'num_blocks': 9, 'num_features': 70},
+            {'num_blocks': 10, 'num_features': 96},
+            {'num_blocks': 10, 'num_features': 64},
             {'num_blocks': 23, 'num_features': 64},
             
             # 特殊尺寸
